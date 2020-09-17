@@ -1,0 +1,40 @@
+export default {
+  products: [
+    {
+      name: 'Slim Shirt',
+      category: 'Shirts',
+      image: '/images/image2.jpg',
+      price: '$49.99',
+      brand: 'Hugo Boss',
+      rating: 4.2,
+      numReviews: 10,
+    },
+    {
+      name: 'Fit Shirt',
+      category: 'Shirts',
+      image: '/images/image3.jpg',
+      price: '$59.99',
+      brand: 'Lacoste',
+      rating: 4.5,
+      numReviews: 8,
+    },
+    {
+      name: 'Slim Sweater',
+      category: 'Sweaters',
+      image: '/images/image1.jpg',
+      price: '$69.99',
+      brand: 'Lacoste',
+      rating: 4.8,
+      numReviews: 17,
+    },
+    {
+      name: 'Export Pants',
+      image: '/images/pantalon.jpg',
+      category: 'Pants',
+      price: '$69.99',
+      brand: 'Herrera',
+      rating: 4.1,
+      numReviews: 13,
+    },
+  ],
+};

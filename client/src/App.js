@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import data from './data';
 import './App.css';
 
 function App() {
-  function openMenu() {
+  const openMenu = () => {
     document.querySelector('.sidebar').classList.add('open');
-  }
+  };
 
-  function closeMenu() {
+  const closeMenu = () => {
     document.querySelector('.sidebar').classList.remove('open');
-  }
+  };
 
   return (
     <div className="grid-container">
@@ -23,7 +24,7 @@ function App() {
         </div>
       </header>
       <aside className="sidebar">
-        <h3>Shopping Categories</h3>
+        <h3>Shop Categories</h3>
         <button className="sidebar-close-button" onClick={closeMenu}>
           X
         </button>
@@ -39,51 +40,25 @@ function App() {
       <main className="main">
         <div className="content">
           <ul className="products">
-            <li>
-              <div className="product">
-                <img
-                  className="product-image"
-                  src="/images/image2.jpg"
-                  alt="shirt"
-                />
-                <div className="product-name">
-                  <a href="/product">Slim Shirt</a>
+            {data.products.map((product) => (
+              <li>
+                <div className="product">
+                  <img
+                    className="product-image"
+                    src={product.image}
+                    alt="shirt"
+                  />
+                  <div className="product-name">
+                    <a href="/product">{product.name}</a>
+                  </div>
+                  <div className="product-brand">{product.brand}</div>
+                  <div className="product-price">{product.price}</div>
+                  <div className="product-rating">
+                    {product.rating} Stars {product.numReviews}
+                  </div>
                 </div>
-                <div className="product-brand">Hugo Boss</div>
-                <div className="product-price">$59.99</div>
-                <div className="product-rating">4.5 Stars (10 reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img
-                  className="product-image"
-                  src="/images/image1.jpg"
-                  alt="shirt"
-                />
-                <div className="product-name">
-                  <a href="/product">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Hugo Boss</div>
-                <div className="product-price">$59.99</div>
-                <div className="product-rating">4.5 Stars (10 reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img
-                  className="product-image"
-                  src="/images/image6.jpg"
-                  alt="shirt"
-                />
-                <div className="product-name">
-                  <a href="/product">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Hugo Boss</div>
-                <div className="product-price">$59.99</div>
-                <div className="product-rating">4.5 Stars (10 reviews)</div>
-              </div>
-            </li>
+              </li>
+            ))}
           </ul>
         </div>
       </main>
