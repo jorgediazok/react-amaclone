@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  function openMenu() {
+    document.querySelector('.sidebar').classList.add('open');
+  }
+
+  function closeMenu() {
+    document.querySelector('.sidebar').classList.remove('open');
+  }
+
   return (
     <div className="grid-container">
       <header className="header">
         <div className="logo">
-          <button>&#9776;</button>
+          <button onClick={openMenu}>&#9776;</button>
           <a href="/">Amaclone</a>
         </div>
         <div className="header-links">
@@ -14,6 +22,20 @@ function App() {
           <a href="/login">LOGIN</a>
         </div>
       </header>
+      <aside className="sidebar">
+        <h3>Shopping Categories</h3>
+        <button className="sidebar-close-button" onClick={closeMenu}>
+          X
+        </button>
+        <ul>
+          <li>
+            <a href="/">Pants</a>
+          </li>
+          <li>
+            <a href="/">Shirts</a>
+          </li>
+        </ul>
+      </aside>
       <main className="main">
         <div className="content">
           <ul className="products">
