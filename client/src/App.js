@@ -14,9 +14,24 @@ function App() {
         </div>
       </header>
       <main className="main">
-        <ul>
-          <li>Product 1</li>
-        </ul>
+        <div className="content">
+          <ul className="products">
+            <li>
+              <div className="product">
+                <img
+                  className="product-image"
+                  src="/images/image2.jpg"
+                  alt="shirt"
+                />
+                <div className="product-name">
+                  <a href="/product">Slim Shirt</a>
+                </div>
+                <div className="product-brand">Hugo Boss</div>
+                <div className="product-price">$59.99</div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </main>
       <footer className="footer">All Rights Reserved</footer>
     </div>
