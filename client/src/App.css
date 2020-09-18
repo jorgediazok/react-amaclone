@@ -5,6 +5,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+#root {
+  height: 100%;
+}
+
 .grid-container {
   display: grid;
   font-size: 1.2rem;
