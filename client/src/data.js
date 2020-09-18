@@ -1,7 +1,7 @@
 export default {
   products: [
     {
-      _id: 1,
+      _id: '1',
       name: 'Slim Shirt',
       category: 'Shirts',
       image: '/images/image2.jpg',
@@ -11,7 +11,7 @@ export default {
       numReviews: 10,
     },
     {
-      _id: 2,
+      _id: '2',
       name: 'Fit Shirt',
       category: 'Shirts',
       image: '/images/image3.jpg',
@@ -21,7 +21,7 @@ export default {
       numReviews: 8,
     },
     {
-      _id: 3,
+      _id: '3',
       name: 'Slim Sweater',
       category: 'Sweaters',
       image: '/images/image1.jpg',
@@ -31,7 +31,7 @@ export default {
       numReviews: 17,
     },
     {
-      _id: 4,
+      _id: '4',
       name: 'Export Pants',
       image: '/images/pantalon.jpg',
       category: 'Pants',
