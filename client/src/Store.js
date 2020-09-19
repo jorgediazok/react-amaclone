@@ -4,11 +4,13 @@ import {
   productDetailsReducer,
   productListReducer,
 } from './Reducers/productReducers';
+import { cartReducer } from './Reducers/cartReducers';
 
 const initialState = {};
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  cart: cartReducer,
 });
 
 // @ts-ignore

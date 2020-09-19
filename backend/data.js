@@ -9,6 +9,7 @@ export default {
       brand: 'Hugo Boss',
       rating: 4.2,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       _id: '2',
@@ -19,6 +20,7 @@ export default {
       brand: 'Lacoste',
       rating: 4.5,
       numReviews: 8,
+      countInStock: 3,
     },
     {
       _id: '3',
@@ -29,6 +31,7 @@ export default {
       brand: 'Lacoste',
       rating: 4.8,
       numReviews: 17,
+      countInStock: 2,
     },
     {
       _id: '4',
@@ -39,6 +42,7 @@ export default {
       brand: 'Herrera',
       rating: 4.1,
       numReviews: 13,
+      countInStock: 9,
     },
   ],
 };
