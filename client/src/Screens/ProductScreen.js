@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsProduct } from '../Actions/productActions';
 
 function ProductScreen(props) {
+  const [qty, setQty] = useState(1);
+  // @ts-ignore
   const productDetails = useSelector((state) => state.productDetails);
   const { product, loading, error } = productDetails;
   const dispatch = useDispatch();
@@ -14,6 +16,10 @@ function ProductScreen(props) {
       //
     };
   }, []);
+
+  const handleAddToCart = () => {
+    props.history.push('/cart/' + props.match.params.id + '?qty=' + qty);
+  };
 
   return (
     <div>
@@ -49,18 +55,29 @@ function ProductScreen(props) {
           <div className="details-action">
             <ul>
               <li>Price:{product.price}</li>
-              <li>Status: {product.status}</li>
+              <li>Status: {product.countInStock > 0 ? 'In Stock' : ''}</li>
               <li>
                 Qty:
-                <select>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                <select
+                  value={qty}
+                  onChange={(e) => {
+                    // @ts-ignore
+                    setQty(e.target.value);
+                  }}
+                >
+                  {[...Array(product.countInStock).keys()].map((x) => (
+                    <option key={x + 1} value={x + 1}>
+                      {x + 1}
+                    </option>
+                  ))}
                 </select>
               </li>
               <li>
-                <button className="button">ADD TO CART</button>
+                {product.countInStock > 0 && (
+                  <button className="button primary" onClick={handleAddToCart}>
+                    ADD TO CART
+                  </button>
+                )}
               </li>
             </ul>
           </div>
